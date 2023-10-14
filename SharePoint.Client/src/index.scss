@@ -1,0 +1,80 @@
+@use "scss-reset/reset";
+@import "./Base/Scss/variable";
+@import "./Base/Scss/mixin";
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: $white-color;
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  color: $text-color;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.react-icons {
+  color: $white-color;
+  background-color: inherit;
+  width: 21px;
+  height: 21px;
+}
+
+.wrapper__content {
+  margin-bottom: 24px;
+}
+
+.view__more {
+  @include flexContainer($justify: flex-start);
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+
+  &--text {
+    color: #0074bd;
+    font-size: 14px;
+  }
+
+  &--img {
+    margin-top: 2px;
+    width: 12px;
+    height: 15px;
+  }
+}

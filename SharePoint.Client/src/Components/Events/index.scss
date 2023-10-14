@@ -1,0 +1,81 @@
+@import "../../Base/Scss/variable";
+@import "../../Base/Scss/mixin";
+
+.events__wrapper {
+  @include flexContainer($justify: flex-start, $align: flex-start);
+  flex-direction: column;
+  gap: 12px;
+
+  @include devices(laptop) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @include devices(tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .events__container {
+    @include flexContainer($justify: stretch, $align: stretch);
+    column-gap: 8px;
+    width: 100%;
+
+    @include devices(laptop) {
+      flex-basis: calc(50% - 12px);
+    }
+
+    @include devices(tablet) {
+      flex-basis: calc(50% - 12px);
+    }
+
+    .events__item--time {
+      @include flexContainer($justify: center);
+      flex-direction: column;
+      width: 80px;
+      height: 80px;
+      background: $white-color;
+      border: 3px solid $greenBold-color;
+      color: $greenBold-color;
+
+      &--date {
+        font-size: 26px;
+        color: inherit;
+      }
+
+      &--month {
+        font-size: 16px;
+      }
+    }
+
+    .events__item--main {
+      background: #d6f3e9;
+      border-radius: 2px;
+      flex-grow: 1;
+      @include flexContainer($justify: center, $align: flex-start);
+      flex-direction: column;
+      row-gap: 12px;
+      padding-left: 16px;
+
+      &--title {
+        font-size: 16px;
+        color: $primary-color;
+        font-weight: 600;
+      }
+
+      .events__time {
+        @include flexContainer($justify: center);
+        column-gap: 6px;
+
+        &--img {
+          width: 16px;
+          height: 16px;
+        }
+        &--text {
+          font-size: 14px;
+          color: $text-color;
+        }
+      }
+    }
+  }
+}

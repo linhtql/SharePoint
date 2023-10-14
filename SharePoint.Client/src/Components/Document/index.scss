@@ -1,0 +1,51 @@
+@import "../../Base/Scss/variable";
+@import "../../Base/Scss/mixin";
+
+.document__container {
+  @include gridContainer($column: repeat(2, 1fr));
+  gap: 12px 4px;
+
+  @include devices(mobile) {
+    @include gridContainer($column: repeat(1, 1fr));
+  }
+
+  .document__text {
+    margin-bottom: 22px;
+
+    h6 {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+
+  &--item {
+    &--children {
+      margin-top: 19px;
+    }
+
+    &:nth-child(n + 3).document {
+      @include devices(laptop) {
+        display: none;
+      }
+
+      @include devices(tablet) {
+        display: none;
+      }
+
+      @include devices(mobile) {
+        display: none;
+      }
+    }
+
+    .document__content {
+      @include flexContainer($justify: flex-start);
+      gap: 17px;
+      margin-bottom: 19px;
+
+      &--img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

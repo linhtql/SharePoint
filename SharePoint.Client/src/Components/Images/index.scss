@@ -1,0 +1,15 @@
+@import "../../Base/Scss/variable";
+@import "../../Base/Scss/mixin";
+
+.grid__container {
+  @include gridContainer($column: repeat(4, 1fr));
+  gap: 1px 4px;
+
+  @include devices(tablet) {
+    @include gridContainer($column: repeat(3, 1fr));
+  }
+
+  @include devices(mobile) {
+    @include gridContainer($column: repeat(2, 1fr));
+  }
+}

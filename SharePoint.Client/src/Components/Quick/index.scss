@@ -1,0 +1,43 @@
+@import "../../Base/Scss/variable";
+@import "../../Base/Scss/mixin";
+
+.quick__container {
+  @include flexContainer($justify: flex-start);
+  flex-wrap: wrap;
+  gap: 4px;
+
+  &--item.quick {
+    width: calc(33% - 4px);
+    height: 136px;
+    background-color: #0074bd;
+    border-radius: 2px;
+
+    @include devices(laptop) {
+      width: 136px;
+    }
+
+    @include devices(tablet) {
+      width: 130px;
+    }
+
+    @include devices(mobile) {
+      width: calc(33% - 4px);
+    }
+
+    .quick__box {
+      @include flexContainer();
+      flex-direction: column;
+      padding: 30px 20px;
+      gap: 16px;
+
+      @include devices(mobile) {
+        padding-inline: 10px;
+      }
+
+      &--text {
+        font-size: 14px;
+        color: $white-color;
+      }
+    }
+  }
+}

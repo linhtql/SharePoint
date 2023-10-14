@@ -1,0 +1,44 @@
+@mixin devices($breakpoint) {
+  //the name of the mixin is devices
+
+  @if $breakpoint == largeScreen {
+    @media only screen and (min-width: $desktopsPlus) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktops {
+    @media (min-width: $laptopPlus) and (max-width: $desktops) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == laptop {
+    @media (min-width: $tabletPlus) and (max-width: $laptop) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet {
+    @media (min-width: $mobilePlus) and (max-width: $tablet) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: $mobile) {
+      @content;
+    }
+  }
+}
+
+@mixin flexContainer($justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin gridContainer($column) {
+  display: grid;
+  grid-template-columns: $column;
+}

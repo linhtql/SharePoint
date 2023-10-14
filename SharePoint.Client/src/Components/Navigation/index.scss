@@ -1,0 +1,83 @@
+@import "../../Base/Scss/variable";
+@import "../../Base/Scss/mixin";
+
+.nav {
+  height: 108px;
+  padding: 25px 0px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
+  @include devices(mobile) {
+    justify-content: space-between;
+  }
+
+  &__logo {
+    height: 62px;
+    width: 62px;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include devices(mobile) {
+      display: none;
+    }
+
+    .nav__item {
+      display: inline-block;
+      padding: 17px 24px;
+
+      @include devices(mobile) {
+        display: flex;
+      }
+    }
+  }
+
+  .nav__menu {
+    cursor: pointer;
+    display: none;
+
+    @include devices(mobile) {
+      display: block;
+    }
+  }
+}
+
+.nav__overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $white-color;
+  z-index: 2;
+  cursor: pointer;
+
+  &--cancel {
+    padding: 17px 24px 8px;
+    text-align: right;
+  }
+
+  &--flex {
+    @include flexContainer();
+    padding-bottom: 6px;
+    border-bottom: 1px solid $text-color;
+  }
+
+  &--icon {
+    display: flex;
+    align-items: center;
+  }
+
+  &--items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 17px 24px;
+    text-align: end;
+    font-size: 16px;
+  }
+}

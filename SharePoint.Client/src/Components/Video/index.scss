@@ -1,0 +1,31 @@
+@import "../../Base/Scss/variable";
+@import "../../Base/Scss/mixin";
+
+.grid__container {
+  @include gridContainer($column: repeat(4, 1fr));
+  gap: 1px 4px;
+  margin-bottom: 8px;
+
+  @include devices(laptop) {
+    @include gridContainer($column: repeat(3, 1fr));
+  }
+
+  @include devices(tablet) {
+    @include gridContainer($column: repeat(3, 1fr));
+  }
+
+  @include devices(mobile) {
+    @include gridContainer($column: repeat(2, 1fr));
+  }
+
+  &--item {
+    position: relative;
+
+    &--icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
